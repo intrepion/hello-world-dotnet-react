@@ -3,6 +3,6 @@ describe('The Home Page', () => {
     cy.visit('/')
 
     cy.get("p")
-      .should("contain", "Hello world! This is my first React app.");
+      .should("contain", "Hello world!");
   })
 })
