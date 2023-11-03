@@ -2,7 +2,7 @@ describe('The Home Page', () => {
   it('successfully loads', () => {
     cy.visit('/')
 
-    cy.get("p")
-      .should("contain", "Hello world!");
+    cy.get("h1")
+      .should("contain", "Posts from our API call");
   })
 })
