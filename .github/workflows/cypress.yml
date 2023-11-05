@@ -19,9 +19,12 @@ jobs:
           dotnet-version: ${{ matrix.dotnet }}
       - name: Checkout
         uses: actions/checkout@v4
+      - name: .NET run
+        run: dotnet run --project ReactProj
+      - name: curl run
+        run: curl http://localhost:5216
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          start: dotnet run --project ReactProj, curl http://localhost:5216
           # quote the url to be safe against YML parsing surprises
           wait-on: 'https://localhost:44459'
