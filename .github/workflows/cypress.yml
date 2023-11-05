@@ -1,0 +1,27 @@
+name: After server responds
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  cypress-run:
+    strategy:
+      matrix:
+        node: [ 20 ]
+        os: [ ubuntu-22.04 ]
+    runs-on: ${{ matrix.os }}
+    name: E2E on ${{ matrix.os }} using Node ${{ matrix.node }}
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm start
+          # quote the url to be safe against YML parsing surprises
+          wait-on: 'https://localhost:44459'
