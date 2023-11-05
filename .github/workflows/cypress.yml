@@ -22,6 +22,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          start: dotnet run --project ReactProj
+          start: dotnet run --project ReactProj, curl http://localhost:5216
           # quote the url to be safe against YML parsing surprises
           wait-on: 'https://localhost:44459'
