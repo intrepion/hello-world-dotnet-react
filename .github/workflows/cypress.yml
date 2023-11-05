@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: .NET run
-        run: dotnet run --project ReactProj
+        run: dotnet run --project ReactProj &
       - name: curl run
         run: curl http://localhost:5216
       - name: Cypress run
