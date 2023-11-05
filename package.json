@@ -1,0 +1,11 @@
+{
+  "name": "hello-world-dotnet-react",
+  "version": "1.0.0",
+  "description": "Following tutorial at https://learn.microsoft.com/en-us/windows/dev-environment/javascript/react-beginners-tutorial#try-using-react-with-an-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
